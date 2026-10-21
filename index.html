@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Noel Shane Bagay — Data Analytics, Business Intelligence, Automation, and Power Platform portfolio.">
+  <title>Noel Shane Bagay | Analytics & Automation</title>
+  <style>
+    :root {
+      --bg: #090d18; --panel: #101729; --panel-2: #141e33; --text: #f5f7fb;
+      --muted: #aab5c9; --line: rgba(255,255,255,.10); --red: #ef4444;
+      --red-2: #ff6b6b; --blue: #7da7ff; --radius: 20px; --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background:
+      radial-gradient(ellipse at 85% 0%, rgba(239,68,68,.12), transparent 32%),
+      radial-gradient(ellipse at 0% 30%, rgba(73,112,220,.10), transparent 28%), var(--bg);
+      color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(9,13,24,.82); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -.03em; }
+    .brand-mark { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 13px; background: linear-gradient(135deg, var(--red), #9f1239); box-shadow: 0 8px 30px rgba(239,68,68,.22); }
+    .brand-mark span { font-size: 13px; letter-spacing: -.08em; }
+    nav { display: flex; align-items: center; gap: 26px; color: var(--muted); font-size: 14px; }
+    nav a:hover, nav a.active { color: white; }
+    .nav-cta { padding: 10px 16px; border: 1px solid rgba(239,68,68,.5); border-radius: 999px; color: #fff; }
+    .menu-btn { display: none; background: none; border: 1px solid var(--line); color: white; border-radius: 10px; padding: 8px 11px; font-size: 20px; }
+    .hero { padding: 100px 0 86px; display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: 60px; min-height: 600px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; border: 1px solid rgba(239,68,68,.25); background: rgba(239,68,68,.08); color: #ffb4b4; padding: 7px 12px; border-radius: 999px; font-size: 12px; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+    .dot { width: 7px; height: 7px; background: var(--red-2); border-radius: 50%; box-shadow: 0 0 0 5px rgba(239,68,68,.12); }
+    h1 { font-size: clamp(42px, 6vw, 76px); letter-spacing: -.065em; line-height: 1.04; margin: 24px 0 20px; max-width: 780px; }
+    .gradient { background: linear-gradient(90deg, #fff 0%, #ffb4b4 72%, #ef4444 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { color: var(--muted); font-size: clamp(16px, 1.7vw, 19px); max-width: 650px; margin: 0 0 30px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 13px 18px; border-radius: 12px; border: 1px solid var(--line); font-weight: 700; font-size: 14px; transition: transform .2s, border-color .2s, background .2s; cursor: pointer; }
+    .btn:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.3); }
+    .btn-primary { background: linear-gradient(135deg, #ef4444, #be123c); border: 0; box-shadow: 0 12px 32px rgba(239,68,68,.2); }
+    .btn-secondary { background: rgba(255,255,255,.03); }
+    .hero-card { background: linear-gradient(160deg, rgba(255,255,255,.07), rgba(255,255,255,.015)); border: 1px solid var(--line); border-radius: 28px; padding: 22px; box-shadow: 0 30px 100px rgba(0,0,0,.22); transform: rotate(1.5deg); }
+    .mini-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 18px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .window-dots { display: flex; gap: 5px; } .window-dots i { width: 7px; height: 7px; border-radius: 50%; background: #4b5568; }
+    .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0; }
+    .metric { padding: 15px; border-radius: 15px; background: rgba(5,9,18,.7); border: 1px solid var(--line); }
+    .metric small { color: var(--muted); display: block; font-size: 11px; }
+    .metric strong { display: block; font-size: 23px; margin-top: 3px; letter-spacing: -.04em; }
+    .metric em { font-size: 11px; font-style: normal; color: #86efac; }
+    .chart { background: rgba(5,9,18,.65); border: 1px solid var(--line); border-radius: 16px; padding: 17px; }
+    .chart-title { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; margin-bottom: 12px; }
+    .bars { display: flex; align-items: end; gap: 8px; height: 105px; padding-top: 6px; }
+    .bar { flex: 1; border-radius: 6px 6px 2px 2px; background: linear-gradient(180deg, #fb7185, #9f1239); opacity: .92; }
+    .bar:nth-child(2n) { background: linear-gradient(180deg, #7da7ff, #3155a5); }
+    .float-label { margin-top: 14px; display: flex; justify-content: space-between; color: var(--muted); font-size: 11px; }
+    .section { padding: 78px 0; border-top: 1px solid var(--line); }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 30px; }
+    .kicker { color: var(--red-2); font-size: 12px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    h2 { font-size: clamp(30px, 4vw, 44px); line-height: 1.12; letter-spacing: -.05em; margin: 8px 0 0; }
+    .section-desc { color: var(--muted); max-width: 510px; margin: 0; font-size: 15px; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 12px; }
+    .stat { padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.025); }
+    .stat strong { display: block; font-size: 25px; letter-spacing: -.05em; }
+    .stat span { display: block; color: var(--muted); font-size: 13px; margin-top: 4px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
+    .filter { border: 1px solid var(--line); background: transparent; color: var(--muted); padding: 8px 13px; border-radius: 999px; cursor: pointer; font: inherit; font-size: 13px; }
+    .filter.active, .filter:hover { color: white; border-color: rgba(239,68,68,.65); background: rgba(239,68,68,.10); }
+    .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+    .project { border: 1px solid var(--line); background: linear-gradient(160deg, rgba(20,30,51,.92), rgba(13,19,34,.95)); border-radius: var(--radius); overflow: hidden; transition: transform .2s, border-color .2s; }
+    .project:hover { transform: translateY(-5px); border-color: rgba(239,68,68,.42); }
+    .project-art { min-height: 170px; padding: 20px; background: radial-gradient(circle at 80% 20%, rgba(239,68,68,.23), transparent 35%), #0c1324; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .art-window { width: 100%; max-width: 290px; border: 1px solid rgba(255,255,255,.17); background: rgba(8,13,25,.88); border-radius: 10px; padding: 10px; box-shadow: 0 15px 35px rgba(0,0,0,.25); }
+    .art-head { display: flex; gap: 4px; margin-bottom: 10px; } .art-head i { width: 5px; height: 5px; background: #68738a; border-radius: 50%; }
+    .art-lines { display: grid; gap: 6px; } .art-lines i { height: 7px; border-radius: 3px; background: #27344d; display: block; } .art-lines i:nth-child(2) { width: 72%; } .art-lines i:nth-child(3) { width: 84%; }
+    .art-tiles { display: grid; grid-template-columns: repeat(3,1fr); gap: 7px; margin-top: 10px; } .art-tiles i { height: 32px; border-radius: 5px; background: linear-gradient(135deg,#243a62,#ef4444); opacity: .85; } .art-tiles i:nth-child(2) { background: linear-gradient(135deg,#243a62,#7da7ff); }
+    .project-body { padding: 20px; }
+    .project-meta { display: flex; justify-content: space-between; gap: 10px; align-items: center; margin-bottom: 12px; }
+    .tag { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; font-weight: 800; color: #ffb4b4; background: rgba(239,68,68,.10); border: 1px solid rgba(239,68,68,.20); padding: 5px 8px; border-radius: 6px; }
+    .status { color: var(--muted); font-size: 10px; }
+    .project h3 { font-size: 19px; letter-spacing: -.03em; margin: 0 0 8px; }
+    .project p { color: var(--muted); font-size: 13px; margin: 0 0 17px; min-height: 62px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip { color: #c5d0e3; border: 1px solid var(--line); padding: 4px 7px; border-radius: 6px; font-size: 10px; }
+    .project-link { display: inline-flex; margin-top: 18px; font-size: 13px; font-weight: 700; color: #fff; background: none; border: 0; padding: 0; cursor: pointer; }
+    .project-link:hover { color: #ffb4b4; }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .skill-card { border: 1px solid var(--line); background: rgba(255,255,255,.025); border-radius: 18px; padding: 23px; }
+    .skill-icon { width: 43px; height: 43px; display: grid; place-items: center; background: rgba(239,68,68,.11); color: #ffb4b4; border-radius: 13px; font-size: 19px; margin-bottom: 17px; }
+    .skill-card h3 { margin: 0 0 8px; font-size: 17px; } .skill-card p { color: var(--muted); font-size: 13px; margin: 0 0 14px; }
+    .skill-list { color: #dce4f3; font-size: 12px; line-height: 2; }
+    .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 35px; align-items: start; }
+    .about-panel { padding: 26px; border-radius: 22px; border: 1px solid var(--line); background: linear-gradient(145deg, rgba(239,68,68,.09), rgba(255,255,255,.02)); }
+    .initials { width: 70px; height: 70px; display: grid; place-items: center; border-radius: 22px; background: linear-gradient(135deg, #ef4444, #881337); font-weight: 900; font-size: 22px; margin-bottom: 20px; }
+    .about-panel h3 { margin: 0 0 4px; font-size: 21px; } .about-panel p, .about-copy p { color: var(--muted); }
+    .about-copy p { margin-top: 0; }
+    .timeline { margin-top: 25px; display: grid; gap: 16px; }
+    .timeline-item { border-left: 2px solid rgba(239,68,68,.55); padding: 0 0 3px 17px; }
+    .timeline-item strong { display: block; font-size: 14px; } .timeline-item span { color: var(--muted); font-size: 12px; }
+    .contact-box { display: flex; justify-content: space-between; align-items: center; gap: 30px; padding: 35px; border: 1px solid rgba(239,68,68,.28); border-radius: 24px; background: radial-gradient(ellipse at 100% 0%, rgba(239,68,68,.15), transparent 45%), var(--panel); }
+    .contact-box p { color: var(--muted); margin-bottom: 0; max-width: 570px; }
+    footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+    .modal-backdrop { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,.72); display: none; place-items: center; padding: 20px; }
+    .modal-backdrop.show { display: grid; }
+    .modal { width: min(620px, 100%); max-height: 85vh; overflow: auto; background: #111a2d; border: 1px solid var(--line); border-radius: 22px; padding: 28px; box-shadow: 0 30px 100px #0008; }
+    .modal-top { display: flex; justify-content: space-between; gap: 15px; align-items: start; }
+    .modal h3 { margin: 0; font-size: 25px; letter-spacing: -.04em; }
+    .close { border: 1px solid var(--line); background: transparent; color: white; border-radius: 10px; font-size: 20px; width: 36px; height: 36px; cursor: pointer; }
+    .modal p, .modal li { color: var(--muted); font-size: 14px; }
+    .modal h4 { margin-bottom: 5px; }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 35px; padding-top: 75px; }
+      .hero-card { max-width: 520px; transform: none; }
+      .projects { grid-template-columns: repeat(2, 1fr); }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .section-head { align-items: start; flex-direction: column; }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      .nav { min-height: 66px; } .brand { font-size: 14px; } .brand-mark { width: 36px; height: 36px; }
+      .menu-btn { display: block; } nav { display: none; position: absolute; top: 66px; left: 0; right: 0; padding: 18px 20px 22px; background: #0b1020; border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 14px; }
+      nav.open { display: flex; } .nav-cta { text-align: center; }
+      .hero { padding: 58px 0 55px; min-height: auto; } h1 { font-size: 46px; }
+      .hero-card { padding: 14px; } .metric { padding: 11px; } .metric strong { font-size: 20px; }
+      .section { padding: 58px 0; } .projects, .skills-grid, .about-grid { grid-template-columns: 1fr; }
+      .project p { min-height: 0; } .stats { gap: 9px; } .stat { padding: 14px; } .stat strong { font-size: 22px; }
+      .contact-box { flex-direction: column; align-items: start; padding: 25px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Noel Shane Bagay home">
+      <span class="brand-mark"><span>NSB</span></span><span>NOEL SHANE BAGAY</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="navLinks">
+      <a href="#projects">Projects</a><a href="#skills">Expertise</a><a href="#about">About</a><a href="#contact" class="nav-cta">Let's Connect ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero" id="home">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Analytics · BI · Automation</div>
+      <h1>Turning data into <span class="gradient">decisions.</span><br>Turning work into <span class="gradient">systems.</span></h1>
+      <p class="lead">I build practical solutions that connect business intelligence, data analysis, and workflow automation—helping teams understand performance, reduce repetitive work, and make better-informed decisions.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#projects">Explore my projects <span>↘</span></a>
+        <a class="btn btn-secondary" href="#contact">Contact me <span>↗</span></a>
+      </div>
+    </div>
+    <div class="hero-card" aria-label="Illustrative analytics dashboard preview">
+      <div class="mini-top"><span>ANALYTICS OVERVIEW</span><span class="window-dots"><i></i><i></i><i></i></span></div>
+      <div class="metric-grid">
+        <div class="metric"><small>Business intelligence</small><strong>Insights</strong><em>↗ Data to decisions</em></div>
+        <div class="metric"><small>Workflow design</small><strong>Automation</strong><em>↗ Less repetition</em></div>
+      </div>
+      <div class="chart">
+        <div class="chart-title"><span>Illustrative performance trend</span><span>Sample UI</span></div>
+        <div class="bars" aria-hidden="true">
+          <div class="bar" style="height:35%"></div><div class="bar" style="height:48%"></div><div class="bar" style="height:41%"></div><div class="bar" style="height:63%"></div><div class="bar" style="height:55%"></div><div class="bar" style="height:76%"></div><div class="bar" style="height:68%"></div><div class="bar" style="height:92%"></div><div class="bar" style="height:82%"></div>
+        </div>
+        <div class="float-label"><span>Data preparation</span><span>Analysis</span><span>Action</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">What I bring</div><h2>Business context meets<br>technical execution.</h2></div>
+        <p class="section-desc">My focus is not just making reports look good. It's building reliable workflows and clear reporting experiences that help people act on the information.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>BI</strong><span>Reporting & visualization</span></div>
+        <div class="stat"><strong>Data</strong><span>Preparation & analysis</span></div>
+        <div class="stat"><strong>Flow</strong><span>Automation & process design</span></div>
+        <div class="stat"><strong>Apps</strong><span>Low-code business solutions</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">Selected work</div><h2>Projects built around<br>real business needs.</h2></div>
+        <p class="section-desc">A growing collection of business intelligence, automation, and application projects. Open a card to see the planned case-study structure.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="filter active" data-filter="all">All projects</button>
+        <button class="filter" data-filter="bi">Business intelligence</button>
+        <button class="filter" data-filter="automation">Automation</button>
+        <button class="filter" data-filter="apps">Power Platform</button>
+        <button class="filter" data-filter="analytics">Risk & analytics</button>
+      </div>
+      <div class="projects" id="projectGrid">
+        <article class="project" data-category="apps automation">
+          <div class="project-art"><div class="art-window"><div class="art-head"><i></i><i></i><i></i></div><div class="art-lines"><i></i><i></i><i></i></div><div class="art-tiles"><i></i><i></i><i></i></div></div></div>
+          <div class="project-body"><div class="project-meta"><span class="tag">Power Platform</span><span class="status">In development</span></div><h3>WorkGrid</h3><p>A combined ticket, sprint, and team management app designed to give teams a clear view of work and progress.</p><div class="chips"><span class="chip">Power Apps</span><span class="chip">SharePoint</span><span class="chip">Power Fx</span></div><button class="project-link" data-project="workgrid">Explore case study ↗</button></div>
+        </article>
+        <article class="project" data-category="bi analytics">
+          <div class="project-art"><div class="art-window"><div class="art-head"><i></i><i></i><i></i></div><div class="art-tiles"><i></i><i></i><i></i></div><div class="art-lines" style="margin-top:10px"><i></i><i></i><i></i></div></div></div>
+          <div class="project-body"><div class="project-meta"><span class="tag">Business intelligence</span><span class="status">Portfolio case study</span></div><h3>Sales Intelligence Dashboard</h3><p>A sales reporting concept for tracking performance by period, region, salesperson, product, and branch.</p><div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Power Query</span></div><button class="project-link" data-project="sales">Explore case study ↗</button></div>
+        </article>
+        <article class="project" data-category="apps automation">
+          <div class="project-art"><div class="art-window"><div class="art-head"><i></i><i></i><i></i></div><div class="art-lines"><i></i><i></i><i></i></div><div class="art-tiles"><i></i><i></i><i></i></div></div></div>
+          <div class="project-body"><div class="project-meta"><span class="tag">Internal tools</span><span class="status">In development</span></div><h3>Automation Toolkit</h3><p>A centralized catalog concept for discovering internal utilities by category, description, and search.</p><div class="chips"><span class="chip">Power Apps</span><span class="chip">SharePoint</span><span class="chip">UX</span></div><button class="project-link" data-project="toolkit">Explore case study ↗</button></div>
+        </article>
+        <article class="project" data-category="automation">
+          <div class="project-art"><div class="art-window"><div class="art-head"><i></i><i></i><i></i></div><div class="art-lines"><i></i><i></i><i></i></div><div class="art-tiles"><i></i><i></i><i></i></div></div></div>
+          <div class="project-body"><div class="project-meta"><span class="tag">Process automation</span><span class="status">Demonstration planned</span></div><h3>Reporting Automation Toolkit</h3><p>A reusable workflow concept for consolidating files, validating data, and producing standardized reporting outputs.</p><div class="chips"><span class="chip">Excel VBA</span><span class="chip">Power Query</span><span class="chip">Alteryx</span></div><button class="project-link" data-project="reporting">Explore case study ↗</button></div>
+        </article>
+        <article class="project" data-category="analytics bi">
+          <div class="project-art"><div class="art-window"><div class="art-head"><i></i><i></i><i></i></div><div class="art-tiles"><i></i><i></i><i></i></div><div class="art-lines" style="margin-top:10px"><i></i><i></i><i></i></div></div></div>
+          <div class="project-body"><div class="project-meta"><span class="tag">Risk analytics</span><span class="status">Independent demo planned</span></div><h3>Risk Indicators Explorer</h3><p>A synthetic-data demonstration of risk indicators, data quality checks, visual analysis, and recommendations.</p><div class="chips"><span class="chip">Statistics</span><span class="chip">Power BI</span><span class="chip">Python / R</span></div><button class="project-link" data-project="risk">Explore case study ↗</button></div>
+        </article>
+        <article class="project" data-category="bi automation">
+          <div class="project-art"><div class="art-window"><div class="art-head"><i></i><i></i><i></i></div><div class="art-lines"><i></i><i></i><i></i></div><div class="art-tiles"><i></i><i></i><i></i></div></div></div>
+          <div class="project-body"><div class="project-meta"><span class="tag">Data preparation</span><span class="status">Case study planned</span></div><h3>Data Quality & Consolidation</h3><p>A demonstration of standardizing source files, handling inconsistent fields, and preparing dependable reporting data.</p><div class="chips"><span class="chip">Power Query</span><span class="chip">Excel</span><span class="chip">Alteryx</span></div><button class="project-link" data-project="quality">Explore case study ↗</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">Core expertise</div><h2>Tools are useful.<br>Outcomes matter more.</h2></div>
+        <p class="section-desc">These categories reflect the areas I work across. We'll refine the list to match your hands-on experience and the roles you want to target.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card"><div class="skill-icon">▥</div><h3>Business Intelligence</h3><p>Turn business data into clear, decision-ready reporting.</p><div class="skill-list">Power BI · DAX · Power Query · KPI design · Data visualization</div></div>
+        <div class="skill-card"><div class="skill-icon">⌘</div><h3>Data & Analysis</h3><p>Prepare data, investigate patterns, and communicate findings.</p><div class="skill-list">Excel · SQL · Statistical analysis · Data cleaning · Reporting</div></div>
+        <div class="skill-card"><div class="skill-icon">↻</div><h3>Automation</h3><p>Reduce repetitive steps and improve consistency in workflows.</p><div class="skill-list">Excel VBA · Power Automate · Alteryx · Process improvement</div></div>
+        <div class="skill-card"><div class="skill-icon">▦</div><h3>Business Applications</h3><p>Build low-code experiences around how teams work.</p><div class="skill-list">Power Apps · Power Fx · SharePoint · App design</div></div>
+        <div class="skill-card"><div class="skill-icon">⌁</div><h3>Data Platforms</h3><p>Work with business systems and structured data sources.</p><div class="skill-list">Dynamics 365 Business Central · Relational databases · Data modeling</div></div>
+        <div class="skill-card"><div class="skill-icon">◈</div><h3>Risk & Modeling</h3><p>Use analytical methods to explore indicators and support assessment.</p><div class="skill-list">Risk indicators · Statistical modeling · Validation · Evidence-based recommendations</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head"><div><div class="kicker">About me</div><h2>A practical, business-first<br>approach to technology.</h2></div></div>
+      <div class="about-grid">
+        <div class="about-panel"><div class="initials">NSB</div><h3>Noel Shane Bagay</h3><div style="color:var(--red-2);font-size:13px;font-weight:700">Data Analytics · BI · Automation</div><p>Focused on connecting data, processes, and useful tools.</p><a class="btn btn-secondary" href="#contact">Connect with me ↗</a></div>
+        <div class="about-copy">
+          <p>I work across reporting, business analysis, and automation, with an interest in building solutions that make everyday work clearer and more efficient. My experience includes sales performance reporting, dashboard development, data preparation, and low-code application concepts.</p>
+          <p>This portfolio is designed to show both the <strong>business problem</strong> and the <strong>solution process</strong>: the context, approach, tools, decisions, and lessons learned behind each project.</p>
+          <div class="timeline">
+            <div class="timeline-item"><strong>Data Analysis & Statistical Modeling Associate</strong><span>Reyes Tacandong & Co. · Current role</span></div>
+            <div class="timeline-item"><strong>Sales Information Associate</strong><span>YSU Marketing Corp. · Sales reporting, dashboards, and automation</span></div>
+            <div class="timeline-item"><strong>Data-driven merchandising experience</strong><span>Skintific · Monitoring, spreadsheets, and operational support</span></div>
+          </div>
+          <p style="font-size:12px;margin-top:18px">Before publishing, confirm that every role description and date is accurate and appropriate for public sharing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <div><div class="kicker">Let's connect</div><h2>Have a role or project in mind?</h2><p>I'm interested in opportunities across analytics, business intelligence, and automation. Add your preferred professional contact links below before publishing.</p></div>
+        <div class="actions"><a class="btn btn-primary" href="mailto:nsb991999@gmail.com" id="emailBtn">Email me ↗</a><button class="btn btn-secondary" id="copyEmail">Copy email</button></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap footer-inner"><span>© <span id="year"></span> Noel Shane Bagay</span><span>Built with HTML, CSS & JavaScript · Dark Professional Edition</span></div></footer>
+
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal-top"><div><div class="kicker">Project case study</div><h3 id="modalTitle">Project</h3></div><button class="close" id="closeModal" aria-label="Close">×</button></div>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+  const projects = {
+    workgrid: { title: "WorkGrid — Project & Team Management", status: "In development", problem: "Teams need a simple way to see tickets, sprint progress, priorities, and ownership in one place.", approach: ["Create a consistent ticket lifecycle and sprint status model.", "Connect application data to SharePoint lists.", "Use Power Fx to calculate task progress and update status logic.", "Test edge cases such as empty sprints and reopened tickets."], tools: "Power Apps · SharePoint · Power Fx", note: "Replace this draft with verified screenshots, final architecture, and lessons learned when the app is ready to share." },
+    sales: { title: "Sales Intelligence Dashboard", status: "Portfolio case study", problem: "Sales stakeholders need a repeatable view of performance across periods, areas, salespeople, products, and branches.", approach: ["Prepare and validate source data.", "Model dimensions and measures for consistent reporting.", "Build KPI and trend views for different business questions.", "Use synthetic or approved anonymized data in public screenshots."], tools: "Power BI · DAX · Power Query · Excel", note: "This is a portfolio case-study outline based on your stated experience. Add only screenshots and claims you are authorized to share." },
+    toolkit: { title: "Automation Toolkit", status: "In development", problem: "People can lose time finding the right internal utility or understanding what a tool does.", approach: ["Organize tools by category and description.", "Add search and simple navigation.", "Connect the catalog to a maintainable SharePoint list.", "Prioritize accessible layouts and clear labels."], tools: "Power Apps · SharePoint · Power Fx", note: "Use a sanitized demo list and remove internal links, company identifiers, and confidential information before public release." },
+    reporting: { title: "Reporting Automation Toolkit", status: "Demonstration planned", problem: "Recurring reporting can involve repetitive consolidation, cleanup, and formatting steps.", approach: ["Define input file requirements and validation rules.", "Standardize headers, formats, and output structure.", "Automate repeatable transformations and checks.", "Compare the manual process with the automated workflow."], tools: "Excel VBA · Power Query · Alteryx", note: "Add measured time savings only after testing; do not estimate or invent impact metrics." },
+    risk: { title: "Risk Indicators Explorer", status: "Independent demo planned", problem: "A risk assessment becomes more useful when indicators, data quality, and findings can be explored together.", approach: ["Create a fully synthetic dataset.", "Define transparent example indicators and assumptions.", "Visualize distributions, exceptions, and risk patterns.", "Explain limitations and recommendations without implying client results."], tools: "Power BI · Statistics · Python or R", note: "Keep this as an independent demonstration and clearly distinguish it from confidential client engagements." },
+    quality: { title: "Data Quality & Consolidation", status: "Case study planned", problem: "Inconsistent source files make consolidated reporting slower and less dependable.", approach: ["Profile the source files and identify schema differences.", "Normalize data types, headers, and missing values.", "Add validation and reconciliation checks.", "Document assumptions and produce a clean output."], tools: "Power Query · Excel · Alteryx", note: "Use fictional files and show a small before-and-after example to demonstrate the workflow." }
+  };
+  const backdrop = document.getElementById('modalBackdrop');
+  function openProject(key) {
+    const p = projects[key]; if (!p) return;
+    document.getElementById('modalTitle').textContent = p.title;
+    document.getElementById('modalContent').innerHTML = `<p><strong>Status:</strong> ${p.status}</p><h4>Business problem</h4><p>${p.problem}</p><h4>Approach</h4><ul>${p.approach.map(x => `<li>${x}</li>`).join('')}</ul><h4>Tools</h4><p>${p.tools}</p><p><em>${p.note}</em></p>`;
+    backdrop.classList.add('show'); document.body.style.overflow = 'hidden';
+  }
+  document.querySelectorAll('[data-project]').forEach(b => b.addEventListener('click', () => openProject(b.dataset.project)));
+  document.getElementById('closeModal').addEventListener('click', closeModal);
+  backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  function closeModal() { backdrop.classList.remove('show'); document.body.style.overflow = ''; }
+  document.querySelectorAll('.filter').forEach(btn => btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter').forEach(b => b.classList.remove('active')); btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.project').forEach(card => {
+      const cats = card.dataset.category.split(' ');
+      card.style.display = (filter === 'all' || cats.includes(filter)) ? '' : 'none';
+    });
+  }));
+  const menuBtn = document.getElementById('menuBtn'), nav = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => { const open = nav.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', String(open)); });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }));
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // Update this to your real professional email before publishing.
+  const email = 'nsb991999@gmail.com';
+  document.getElementById('copyEmail').addEventListener('click', async () => {
+    const button = document.getElementById('copyEmail');
+    if (email.includes('nsb991999@gmail.com')) 
+    try { await navigator.clipboard.writeText(email); button.textContent = 'Copied ✓'; setTimeout(() => button.textContent = 'Copy email', 1600); }
+    catch { alert('Email: ' + email); }
+  });
+</script>
+</body>
+</html>
